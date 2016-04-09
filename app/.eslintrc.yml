@@ -1,0 +1,8 @@
+
+globals:
+  _: true
+  expect: true
+  inject: true
+parserOptions:
+  ecmaVersion: 6
+  sourceType: module
