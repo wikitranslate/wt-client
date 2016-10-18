@@ -1,3 +1,5 @@
+const apiRoot = 'https://translate.gnab.fr';
+
 class WTController {
   constructor($http) {
     this.name = 'wikitranslate';
@@ -15,14 +17,14 @@ class WTController {
   }
 
   getLangs() {
-    this.$http.get('/api/langs')
+    this.$http.get(`${apiRoot}/langs`)
     .then((res) => {
-      this.languages = res.data;
+      this.languages = res.data.langs;
     });
   }
 
   translate() {
-    this.$http.get(`/api/${this.fromLang}/${this.toLang}/${this.input}`)
+    this.$http.get(`${apiRoot}/${this.fromLang}/${this.toLang}/${this.input}`)
     .then((res) => {
       let translations = _.reduce(res.data, (result, t) => {
         return result.concat(t);

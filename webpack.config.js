@@ -23,5 +23,9 @@ module.exports = {
       path.resolve('./node_modules'),
       path.resolve('../')
     ]
+  },
+  devServer: {
+    contentBase: './dist',
+    hot: true
   }
 };
